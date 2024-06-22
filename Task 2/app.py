@@ -32,14 +32,17 @@ data = {
 
 input_data = pd.DataFrame(data)
 
-# Predict the survival
-prediction = model.predict(input_data)
+# Predict button
+if st.button('Predict'):
+    # Predict the survival
+    prediction = model.predict(input_data)
 
-# Display the prediction
-if prediction[0] == 1:
-    st.success('The passenger is likely to survive.')
-else:
-    st.error('The passenger is not likely to survive.')
+    # Display the prediction
+    if prediction[0] == 1:
+        st.success('The passenger is likely to survive.')
+    else:
+        st.error('The passenger is not likely to survive.')
+
 
 
 
